@@ -17,11 +17,7 @@ The passage experienced a surge in popularity during the 1960s when Letraset use
 
 <Image source={pic} style={{height:300, width:300, marginTop:40}}/>
 
-
-
 <Button title="Press" onPress={()=>console.log("I clicked on the button clicked")}/>
-
-<Button title="Press" onPress={()=>console.log("I clicked on the button clicked")} style={{flex:1, marginTop:20, padding:15}}/>
 
 
 </ScrollView>

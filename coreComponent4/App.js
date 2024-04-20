@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 
 export default function App() {
   return (
@@ -10,6 +10,10 @@ export default function App() {
         barStyle="light-content" 
         // hidden
       />
+      <ActivityIndicator/>
+      <ActivityIndicator size="large"/>
+      <ActivityIndicator size="large" color="midnightblue"/>
+      <ActivityIndicator size="large" color="midnightgreen" animating={true}/>
     </View>
   );
 }

@@ -1,11 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native';
 
 export default function App() {
+  const [ishidden,setIshidden]=useState(false);
+  const [activity, setActivity]=useState(false);
+
+
+
+  const checkstatus=()=>{
+    setActivity(!activity);
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{flex:1, backgroundColor:"plum", padding:50}}>
+  {/* StatusBar */}
+      <StatusBar backgroundColor='lightgreen' hidden={ishidden}/>
+    <Button onPress={()=>setIshidden(!ishidden)} title="Status"/>
+
+
+
+{/* ActivityIndicator */}
+
+<ActivityIndicator size="large" color="midnightgreen" animating={activity}/>
+<Button onPress={checkstatus} title="Activity"/>
+
+
+
+
     </View>
   );
 }

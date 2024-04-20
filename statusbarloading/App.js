@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, Button, ActivityIndicator, Alert } from 'react-native';
 
 export default function App() {
   const [ishidden,setIshidden]=useState(false);
@@ -22,6 +22,17 @@ export default function App() {
 {/* ActivityIndicator */}
 <ActivityIndicator size="large" color="midnightgreen" animating={activity}/>
 <Button onPress={checkstatus} title="Activity"/>
+
+{/* Alert */}
+
+<Button onPress={()=>Alert.alert("Invalid Data!", "DOB incorrect!")} title="Alert" />
+
+
+<Button onPress={()=>Alert.alert("Invalid Data!", "DOB incorrect!",[
+  {text:"Cancel", onPress:()=>console.log("Cancel Pressed")},
+  {text:"OK", onPress:()=>console.log("Ok Pressed")}
+])} title="Alert2" />
+
     </View>
   );
 }

@@ -19,15 +19,9 @@ export default function App() {
     <Button onPress={()=>setIshidden(!ishidden)} title="Status"/>
 
 
-
 {/* ActivityIndicator */}
-
 <ActivityIndicator size="large" color="midnightgreen" animating={activity}/>
 <Button onPress={checkstatus} title="Activity"/>
-
-
-
-
     </View>
   );
 }

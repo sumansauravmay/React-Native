@@ -11,7 +11,7 @@ export default function App() {
 
 
 
-<Modal visible={isvisible} onRequestClose={()=>setIsvisible(true)} animationType='none'>
+<Modal visible={isvisible} onRequestClose={()=>setIsvisible(true)} animationType='slide' presentationStyle='pageSheet'>
   <View style={{flex:1, backgroundColor:"lightblue", padding: 60}}>
 <Text>Modal Content</Text>
 <Button onPress={()=>setIsvisible(false)} title='close' color="midnightblue"/>

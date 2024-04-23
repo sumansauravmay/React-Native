@@ -25,7 +25,15 @@ const styles = StyleSheet.create({
   box: {
     width: 150,
     height: 100,
-    padding: 10,
+    // padding: 10,
+    paddingHorizontal:10,
+    paddingVertical:10,
+    marginVertical:10,
+    marginHorizontal:10,
+    borderWidth:2,
+    borderColor:"purple",
+    borderRadius:5
+
   },
   lightblue: { backgroundColor: "blue" },
   lightgreen: { backgroundColor: "green"},

@@ -6,3 +6,5 @@ npm start
 
 
 
+justify content- for row
+align items- for column

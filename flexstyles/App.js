@@ -1,5 +1,5 @@
 
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Box from './component/Box';
 
 export default function App() {
@@ -18,10 +18,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    // flex:1,
+    height:300,
     flexWrap:"wrap",
-    alignContent:"space-around",
-    marginTop:60,
+    // rowGap:20,
+    // columnGap:20,
+    gap:20,
+    marginTop:64,
     borderWidth:6,
     borderColor:"red"
   },

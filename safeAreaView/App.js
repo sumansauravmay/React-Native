@@ -1,5 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView, Platform } from "react-native";
+import CustomButton from "./components/CustomButton/CustomButton";
+
 
 export default function App() {
   return (
@@ -7,6 +9,7 @@ export default function App() {
       <View style={styles.container}>
         <View style={styles.box}>
           <Text style={styles.text}>welcome!</Text>
+          <CustomButton title="press me" onPress={()=>alert("Pressed")}/>
         </View>
       </View>
     </SafeAreaView>

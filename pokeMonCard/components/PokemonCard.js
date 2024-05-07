@@ -86,9 +86,8 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   typeContainer: {
-    marginBottom: 40,
-    width: "50%",
-    marginLeft:60
+    marginBottom: 40
+   
   },
   badge: {
     flexDirection: "row",

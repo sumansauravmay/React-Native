@@ -4,7 +4,6 @@ import {
   View,
   SafeAreaView,
   StatusBar,
-  FlatList,
   SectionList,
 } from "react-native";
 import groupPokemonList from "./grouped-data.json";

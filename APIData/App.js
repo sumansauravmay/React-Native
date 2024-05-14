@@ -12,6 +12,7 @@ import {
 export default function App() {
   const [postList, setPostList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
 
   const fetchData = async (limit = 10) => {
     const response = await fetch(
@@ -20,6 +21,12 @@ export default function App() {
     const data = await response.json();
     setPostList(data);
     setIsLoading(false);
+  };
+
+  const handleRefresh = () => {
+    setRefreshing(true);
+    fetchData(20);
+    setRefreshing(false);
   };
 
   useEffect(() => {
@@ -48,6 +55,11 @@ export default function App() {
               </View>
             );
           }}
+          ListEmptyComponent={<Text>No Post Found</Text>}
+          ListHeaderComponent={<Text style={styles.hederText}>Post List</Text>}
+          ListFooterComponent={<Text style={styles.footText}>End Of List</Text>}
+          refreshing={refreshing}
+          onRefresh={handleRefresh}
         />
       </View>
     </SafeAreaView>

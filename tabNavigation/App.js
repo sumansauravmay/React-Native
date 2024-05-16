@@ -1,12 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import CourseListScreen from './Screens/CourseListScreen';
+import ProfileScreen from './Screens/ProfileScreen';
+import SettingScreen from './Screens/SettingScreen';
+import Ionicons from "@expo/vector-icons/Ionicons";
+
+
+const Tab= createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer style={styles.container}>
+     <Tab.Navigator 
+     screenOptions={{
+      tabBarLabelPosition: "below-icon",
+      tabBarShowLabel: true,
+      tabBarActiveTintColor:"purple",
+      tabBarInactiveTintColor:"red"
+     }}
+     >
+      <Tab.Screen name='Course List' component={CourseListScreen}/>
+      <Tab.Screen name='Profile List' component={ProfileScreen}
+      options={{
+        tabBarLabel:"My Profile",
+        tabBarIcon:({color})=><Ionicons name="person" size={20} color="blue"/>,
+        tabBarBadge: 3
+     
+     
+      }}
+      />
+      <Tab.Screen name='Setting List' component={SettingScreen}/>
+     </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
